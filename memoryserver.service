@@ -1,0 +1,16 @@
+[Unit]
+Description=Memory Game Server
+
+[Service]
+Type=simple
+User=memoryserver
+Group=memoryserver
+Restart=on-failure
+Environment=MIX_ENV=prod "PORT=4792"
+Environment=LANG=en_US.UTF-8
+
+WorkingDirectory=/home/memoryserver/memoryserver
+ExecStart=/home/memoryserver/memoryserver/start.sh
+
+[Install]
+WantedBy=multi-user.target
